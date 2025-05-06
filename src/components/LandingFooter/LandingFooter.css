@@ -1,0 +1,22 @@
+.footer__container {
+  height: 100px;
+  display: flex;
+  justify-content: start;
+  align-items: end;
+}
+
+.text__container {
+  height: 76px;
+  width: 316px;
+  display: flex;
+  align-items: end;
+  margin-bottom: 2px;
+}
+
+.footer__text {
+  font-size: 12px;
+  font-weight: 400;
+  padding: 12px 12px 0px 12px;
+  margin: 0;
+  line-height: 1.75;
+}

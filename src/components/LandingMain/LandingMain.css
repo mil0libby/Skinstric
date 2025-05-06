@@ -1,0 +1,55 @@
+.main__container {
+  display: flex;
+  justify-content: space-between;
+  height: calc(100vh - 170px);
+  align-items: center;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.landing__header--container {
+  height: 240px;
+  width: 680px;
+  display: flex;
+  align-items: start;
+}
+
+.arrow__container--left,
+.arrow__container--right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.arrow__container--left {
+  margin-left: 16px;
+}
+
+.arrow__container--right {
+  margin-right: 16px;
+  z-index: 999;
+  position: relative; /* Required for z-index to apply */
+}
+
+.box--left,
+.box--right {
+  border: dotted 2px rgba(160, 164, 171, 1);
+  height: 350px;
+  width: 350px;
+  position: absolute;
+  transform: rotate(45deg);
+  z-index: 1;
+  pointer-events: none; /* ✅ Allows clicks to pass through */
+}
+
+.box--left {
+  left: -175px;
+}
+
+.box--right {
+  right: -175px;
+}
+
+button {
+  z-index: 999;
+}
