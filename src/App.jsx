@@ -3,6 +3,9 @@ import Landing from "./pages/Landing";
 import IntroName from "./pages/IntroName";
 import IntroLocation from "./pages/IntroLocation";
 import ChooseMethod from "./pages/ChooseMethod";
+import PreparingAnalysis from "./pages/PreparingAnalysis";
+import AnalysisMenu from "./pages/AnalysisMenu";
+import Demographics from "./pages/Demographics";
 
 function App() {
   return (
@@ -19,6 +22,12 @@ function App() {
             path="/options"
             element={<ChooseMethod></ChooseMethod>}
           ></Route>
+          <Route
+            path="/prep"
+            element={<PreparingAnalysis></PreparingAnalysis>}
+          ></Route>
+          <Route path="/menu" element={<AnalysisMenu></AnalysisMenu>}></Route>
+          <Route path="/dem" element={<Demographics></Demographics>}></Route>
         </Routes>
       </BrowserRouter>
     </div>

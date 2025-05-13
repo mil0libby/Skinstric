@@ -1,13 +1,16 @@
-import React, { useRef, useState } from "react";
+import React, { use, useRef, useState } from "react";
 import Nav from "../components/Nav/Nav";
 import BackArrow from "../assets/images/back--arrow.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import GalleryImg from "../assets/images/gallery.png";
 import CameraImg from "../assets/images/camera.png";
 
 export default function ChooseMethod() {
   const fileInputRef = useRef(null);
   const [base64Image, setBase64Image] = useState("");
+  const [demData, setDemData] = useState("");
+
+  const navigate = useNavigate();
 
   async function sendImageData(img64) {
     const url =
@@ -26,7 +29,9 @@ export default function ChooseMethod() {
       });
 
       const result = await response.json();
-      console.log("Response:", result);
+      console.log("Response:", result.data.race);
+      setDemData(result.data);
+      localStorage.setItem("dem-data", JSON.stringify(result.data)); // Save to localStorage
     } catch (error) {
       console.error("Error:", error);
     }
@@ -46,6 +51,7 @@ export default function ChooseMethod() {
         setBase64Image(reader.result); // Save Base64 string
         console.log("Base64 Image:", reader.result);
         sendImageData(reader.result);
+        navigate("/prep");
       };
       reader.readAsDataURL(file); // Convert to Base64
     }

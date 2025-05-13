@@ -126,3 +126,290 @@ div {
 .left__img {
   margin-right: 82px;
 }
+
+.preparing-analysis__container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pa__text {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.pa__img {
+  position: absolute;
+  animation: spin 10s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.analysis__description--abs {
+  font-size: 12px;
+  font-weight: 400;
+  padding: 12px 12px 0px 12px;
+  margin: 0;
+  line-height: 1.75;
+  padding-left: 24px;
+  width: 300px;
+  position: absolute;
+  top: 40px;
+  left: 0;
+}
+
+.diamond__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+  position: relative;
+}
+
+.diamond {
+  position: absolute;
+  width: 105px;
+  height: 105px;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  transform: rotate(45deg);
+}
+
+/* Center each diamond by shifting their top/left */
+.demographics {
+  top: 140px;
+  left: calc(120px + 35vw);
+}
+
+.skin-type {
+  top: 220px;
+  left: calc(40px + 35vw);
+}
+
+.cosmetic {
+  top: 220px;
+  left: calc(200px + 35vw);
+}
+
+.weather {
+  top: 300px;
+  left: calc(120px + 35vw);
+}
+
+.diamond:hover {
+  background-color: #555;
+  color: white;
+}
+
+.diamond--text {
+  font-size: 12px;
+  font-weight: 600;
+  overflow: hidden;
+  transform: rotate(-45deg);
+  color: #000;
+}
+
+.box--ai {
+  top: 135px;
+  left: 37.25vw;
+}
+
+.box--am {
+  top: 112px;
+  left: 35.75vw;
+}
+
+.box--ao {
+  top: 87px;
+  left: 34vw;
+}
+
+.analysis__container {
+  position: relative;
+}
+
+.mini__header--abs {
+  position: absolute;
+  top: 2px;
+  left: 0px;
+}
+
+/*
+
+Demographics
+
+*/
+
+.analysis__container--dem {
+  display: flex;
+  flex-direction: column;
+}
+
+.demographics-container {
+  display: flex;
+  font-family: sans-serif;
+  background: #f9f9f9;
+  padding: 20px;
+  position: relative;
+  width: 800px;
+  border-top: 1px solid black;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+
+  margin-right: 20px;
+  overflow: hidden;
+  margin-right: 8px;
+}
+
+.sidebar-item {
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  margin-bottom: 4px;
+  background: #fff;
+  color: #000;
+  cursor: pointer;
+}
+
+.sidebar--item.selected {
+  background: #000;
+  color: #fff;
+}
+
+.main-panel {
+  flex-grow: 1;
+  text-align: center;
+  padding-top: 40px;
+}
+
+.category-title {
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+.circle-percentage {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  border-radius: 50%;
+  border: 2px solid #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.percentage {
+  font-size: 36px;
+}
+
+.percentage span {
+  font-size: 16px;
+  vertical-align: super;
+}
+
+.confidence-panel {
+  width: 400px;
+  margin-left: 20px;
+  border-top: 1px solid black;
+}
+
+.confidence-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.confidence-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  color: #333;
+}
+
+.confidence-item.selected {
+  background: #000;
+  color: #fff;
+  padding: 6px 10px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  padding: 8px 16px;
+  border: 1px solid #000;
+  background: #fff;
+  cursor: pointer;
+}
+
+.btn.confirm {
+  background: #000;
+  color: #fff;
+}
+
+.analysis__header {
+}
+
+.dem__header--main {
+  padding: 24px;
+  font-weight: 400;
+  font-size: 48px;
+}
+
+.dem__header--description {
+  font-weight: 400;
+  font-size: 14px;
+  padding-left: 24px;
+  padding-bottom: 48px;
+}
+
+.sidebar--item {
+  width: 200px;
+  height: 75px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: lightgray;
+  margin-bottom: 2px;
+  border-top: 1px solid black;
+}
+
+.sidebar--item--label {
+  padding-left: 8px;
+  padding-top: 4px;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.sidebar--item:hover {
+  background-color: gray;
+}
+
+.sub__container {
+  display: flex;
+}
+
+.sidebar {
+  padding-left: 24px;
+}
