@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Nav from "../components/Nav/Nav";
-import { faL } from "@fortawesome/free-solid-svg-icons";
-import RaceChart from "../components/RaceChart";
+import ConfidenceChart from "../components/ConfidenceChart";
 
 const Demographics = () => {
   const [isRace, setIsRace] = useState(true);
@@ -9,15 +8,24 @@ const Demographics = () => {
   const [isSex, setIsSex] = useState(false);
 
   function getHighestProbKey(object) {
-    // Step 1: Convert to array
     const entries = Object.entries(object);
-
-    // Step 2: Sort by value descending
     const sorted = entries.sort((a, b) => b[1] - a[1]);
-
-    // Step 3: Get the top prediction
     const topPrediction = sorted[0];
     return topPrediction[0].toUpperCase();
+  }
+
+  function getHighestProbVal(object) {
+    const entries = Object.entries(object);
+    const sorted = entries.sort((a, b) => b[1] - a[1]);
+    const topPrediction = sorted[0];
+    return (topPrediction[1] * 100).toFixed(1) + "%";
+  }
+
+  function getHighestProbValDec(object) {
+    const entries = Object.entries(object);
+    const sorted = entries.sort((a, b) => b[1] - a[1]);
+    const topPrediction = sorted[0];
+    return topPrediction[1];
   }
 
   const [data, setData] = useState(
@@ -79,18 +87,68 @@ const Demographics = () => {
             <h3 className="sidebar--item--label">SEX</h3>
           </div>
         </div>
+
         <div className="demographics-container">
           <div className="main-panel">
-            <div className="category-title">$$$$$</div>
+            <div className="category-title">
+              {isRace
+                ? getHighestProbKey(data.race)
+                : isAge
+                ? getHighestProbKey(data.age)
+                : getHighestProbKey(data.gender)}
+            </div>
             <div className="circle-percentage">
+              <svg
+                width="300"
+                height="300"
+                viewBox="0 0 300 300"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle
+                  cx="150"
+                  cy="150"
+                  r="135"
+                  stroke="white"
+                  strokeWidth="30"
+                  fill="none"
+                />
+                <circle
+                  cx="150"
+                  cy="150"
+                  r="135"
+                  stroke="#000000"
+                  strokeWidth="30"
+                  fill="none"
+                  strokeDasharray="848.23"
+                  strokeDashoffset={
+                    isRace
+                      ? 848.23 * (1 - getHighestProbValDec(data.race))
+                      : isAge
+                      ? 848.23 * (1 - getHighestProbValDec(data.age))
+                      : 848.23 * (1 - getHighestProbValDec(data.gender))
+                  } // 50%
+                  strokeLinecap="round"
+                  transform="rotate(-90 150 150)"
+                />
+              </svg>
+
               <div className="percentage">
-                96<span>%</span>
+                {isRace
+                  ? getHighestProbVal(data.race)
+                  : isAge
+                  ? getHighestProbVal(data.age)
+                  : getHighestProbVal(data.gender)}
               </div>
             </div>
           </div>
         </div>
-        {<RaceChart data={data.race}></RaceChart>}
+
+        <ConfidenceChart
+          data={isRace ? data.race : isAge ? data.age : data.gender}
+          label={isRace ? "RACE" : isAge ? "AGE" : "SEX"}
+        />
       </div>
+
       <div className="footer">
         <button className="btn">RESET</button>
         <button className="btn confirm">CONFIRM</button>
