@@ -100,7 +100,7 @@ const TakePhoto = () => {
           <img className="cam__arrow" src={BackArrow} alt="" />
         </Link>
         <img className="cam__info" src={CameraInfo} alt="" />
-        <Link to={"/menu"}>
+        <Link to={"/prep"}>
           <img className="cam__arrow" src={taken && ProceedArrow} alt="" />
         </Link>
       </footer>
