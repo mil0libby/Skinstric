@@ -169,7 +169,16 @@ const Demographics = () => {
         <img className="back--arrow--dem" src={BackArrow} alt="" />
       </Link>
       <div className="footer">
-        <button className="btn">RESET</button>
+        <button
+          className="btn"
+          onClick={() => {
+            setCurrentAge(originalAge);
+            setCurrentRace(originalRace);
+            setCurrentSex(originalSex);
+          }}
+        >
+          RESET
+        </button>
         <button
           className="btn confirm"
           onClick={() => {
