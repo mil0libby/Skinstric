@@ -169,36 +169,41 @@ const Demographics = () => {
         <img className="back--arrow--dem" src={BackArrow} alt="" />
       </Link>
       <div className="footer">
-        <button
-          className="btn"
-          onClick={() => {
-            setCurrentAge(originalAge);
-            setCurrentRace(originalRace);
-            setCurrentSex(originalSex);
-          }}
-        >
-          RESET
-        </button>
-        <button
-          className="btn confirm"
-          onClick={() => {
-            if (isRace) {
-              if (data.race[currentValue]) {
-                setCurrentRace(currentValue);
+        <h5 className="text__mini">
+          If A.I. estimate is wrong, select the correct one.
+        </h5>
+        <div className="buttons--dem">
+          <button
+            className="btn"
+            onClick={() => {
+              setCurrentAge(originalAge);
+              setCurrentRace(originalRace);
+              setCurrentSex(originalSex);
+            }}
+          >
+            RESET
+          </button>
+          <button
+            className="btn confirm"
+            onClick={() => {
+              if (isRace) {
+                if (data.race[currentValue]) {
+                  setCurrentRace(currentValue);
+                }
+              } else if (isAge) {
+                if (data.age[currentValue]) {
+                  setCurrentAge(currentValue);
+                }
+              } else if (isSex) {
+                if (data.gender[currentValue]) {
+                  setCurrentSex(currentValue);
+                }
               }
-            } else if (isAge) {
-              if (data.age[currentValue]) {
-                setCurrentAge(currentValue);
-              }
-            } else if (isSex) {
-              if (data.gender[currentValue]) {
-                setCurrentSex(currentValue);
-              }
-            }
-          }}
-        >
-          CONFIRM
-        </button>
+            }}
+          >
+            CONFIRM
+          </button>
+        </div>
       </div>
     </div>
   );
