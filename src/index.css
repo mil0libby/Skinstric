@@ -438,3 +438,69 @@ Demographics
   font-size: 16px;
   margin-bottom: 8px;
 }
+
+video {
+  width: 100vw;
+  pointer-events: none;
+}
+
+.camera__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.captured__photo {
+  width: 100vw;
+  pointer-events: none;
+}
+
+.great__shot {
+  color: white;
+  position: absolute;
+  top: 40vh;
+  left: 50vw;
+}
+/****
+
+Take photo
+
+****/
+
+.cam__nav {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+}
+
+.cam__header {
+  color: white;
+  white-space: pre;
+}
+
+.cam__footer {
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  padding: 24px;
+}
+
+.cam__arrow {
+  height: 60px;
+  margin: 0 12px;
+}
+
+.img--take-pic {
+  position: absolute;
+  right: 4px;
+}
+
+.cam__info {
+  position: absolute;
+  bottom: 24px;
+  left: 35%;
+}

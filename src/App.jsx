@@ -6,6 +6,7 @@ import ChooseMethod from "./pages/ChooseMethod";
 import PreparingAnalysis from "./pages/PreparingAnalysis";
 import AnalysisMenu from "./pages/AnalysisMenu";
 import Demographics from "./pages/Demographics";
+import TakePhoto from "./pages/TakePhoto";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           ></Route>
           <Route path="/menu" element={<AnalysisMenu></AnalysisMenu>}></Route>
           <Route path="/dem" element={<Demographics></Demographics>}></Route>
+          <Route path="/camera" element={<TakePhoto></TakePhoto>}></Route>
         </Routes>
       </BrowserRouter>
     </div>

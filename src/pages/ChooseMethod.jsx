@@ -76,7 +76,9 @@ export default function ChooseMethod() {
           onChange={handleFileChange}
           style={{ display: "none" }}
         />
-        <img className="method__img right__img" src={CameraImg} alt="" />
+        <Link to="/camera">
+          <img className="method__img right__img" src={CameraImg} alt="" />
+        </Link>
       </div>
       <Link to={"/location"}>
         <figure className="back--arrow">
