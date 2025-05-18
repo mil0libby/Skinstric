@@ -22,7 +22,7 @@ div {
   font-weight: 600;
   font-size: 20px;
   padding-left: 24px;
-  margin-top: 24px;
+  margin-top: 6px;
 }
 
 .info__input--container {
@@ -278,15 +278,6 @@ Demographics
   margin-right: 8px;
 }
 
-.sidebar-item {
-  padding: 10px 15px;
-  border: 1px solid #ddd;
-  margin-bottom: 4px;
-  background: #fff;
-  color: #000;
-  cursor: pointer;
-}
-
 .sidebar--item.selected {
   background: #000;
   color: #fff;
@@ -296,6 +287,7 @@ Demographics
   flex-grow: 1;
   text-align: center;
   padding-top: 40px;
+  height: 400px;
 }
 
 .category-title {
@@ -332,6 +324,8 @@ Demographics
   width: 400px;
   margin-left: 20px;
   border-top: 1px solid black;
+  margin-right: 8px;
+  background-color: #f9f9f9;
 }
 
 .confidence-header {
@@ -356,10 +350,12 @@ Demographics
 
 .footer {
   position: absolute;
-  bottom: 0px;
+  bottom: 8px;
   right: 20px;
   display: flex;
   gap: 10px;
+  margin-right: 24px;
+  padding-bottom: 12px;
 }
 
 .btn {
@@ -387,7 +383,7 @@ Demographics
   font-weight: 400;
   font-size: 14px;
   padding-left: 24px;
-  padding-bottom: 48px;
+  padding-bottom: 12px;
 }
 
 .sidebar--item {
@@ -396,7 +392,7 @@ Demographics
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: lightgray;
+  background-color: #f9f9f9;
   margin-bottom: 2px;
   border-top: 1px solid black;
 }
@@ -418,4 +414,14 @@ Demographics
 
 .sidebar {
   padding-left: 24px;
+}
+
+.main__container--dem {
+  height: 100vh;
+}
+
+.back--arrow--dem {
+  position: absolute;
+  bottom: 18px;
+  left: 32px;
 }

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-export default function ConfidenceChart({ data, label }) {
+export default function ConfidenceChart({ data, label, setCurrentValue }) {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [sortedData, setSortedData] = useState([]);
 
@@ -33,7 +33,10 @@ export default function ConfidenceChart({ data, label }) {
           className={`confidence-item ${
             selectedIndex === index ? "selected" : ""
           }`}
-          onClick={() => setSelectedIndex(index)}
+          onClick={() => {
+            setSelectedIndex(index);
+            setCurrentValue(label);
+          }}
         >
           <span>{capitalizeWords(label)}</span>
           <span>{(value * 100).toFixed(1)}%</span>
